@@ -17,7 +17,7 @@ export async function POST(
         } = body
 
         if(!currentUser?.id || !currentUser?.email){
-            return new NextResponse('Unauthorized', { status: 401 })
+            return new NextResponse('Unauthorized', { status: 400 })
         }
 
         if (isGroup && (!members || members.lenth < 2 || !name)){
